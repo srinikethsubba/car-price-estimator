@@ -4,7 +4,7 @@ import os
 import json
 
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 def extract_car_info(user_input):
@@ -32,4 +32,6 @@ Input: "{user_input}"
     except Exception as e:
         print("Failed to parse GPT response:", e)
         return None
+
+
 
